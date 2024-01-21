@@ -1,8 +1,8 @@
 ---
-title: "about me"
-subtitle: "my data science portfolio"
-# use quarto markdown to 
+title: "About me"
+subtitle: "My data science portfolio"
 ---
+Hi, My name is McKay Clark. I am 24 and am a student at Brigham Young University Idaho who is trying to figure out what to study that relates to coding and computers. I'm currently looking into software engineering or web development, but I am open to the many other options offered here as well. I love to play guitar, sing, be outside and play video games. I currently work as a sales associate in the men's department for Dillards in Idaho Falls.
 
 # Title 1 Header
 ## Title 2 Header
