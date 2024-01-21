@@ -73,7 +73,7 @@ format:
       light: flatly # more themes can be found [here](https://quarto.org/docs/output-formats/html-themes.html)
       dark: darkly
       #light: cosmo
-      dark: [cosmo, theme-dark.scss]
+      #dark: [cosmo, theme-dark.scss]
     css: styles.css
     toc: true
 
