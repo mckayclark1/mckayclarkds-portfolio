@@ -148,7 +148,7 @@
     "href": "Projects/ds250_project_0.html",
     "title": "Client Report - [Project 0]",
     "section": "",
-    "text": "THIS .qmd FILE SHOULD BE USED TO WRITE YOUR REPORT. YOU WILL NEED TO COMPILE THE REPORT INTO A .html DOCUMENT AND SUBMIT IT ON CANVAS.",
+    "text": "__The data that I have illustrated in the scatterplot and table bellow explores the relationship between the highway miles per gallon and the engine displacement which is the amount of air moved by the car’s cylinders wether that be in or out of it. I found a trend where, the lower the engine displacement, the higher the miles per gallon were on the highways. Towards the end of the chart, I noticed a few outliers with some of the higher displacement engines having I higher value of miles per gallon than their counterparts. Something like this may suggest that the chart may continue in an upward trend._\n\n\nShow the code\nmpg = pd.read_csv(\"https://raw.githubusercontent.com/byuidatascience/data4python4ds/master/data-raw/mpg/mpg.csv\")\n\n\nI believe I have everything running smoothly. I uninstalled python 3.12 and reinstalled python 3.11.7 to be safe. I have no other questions at this time.",
     "crumbs": [
       "DS250 Projects",
       "Project 0"
@@ -158,19 +158,30 @@
     "objectID": "Projects/ds250_project_0.html#elevator-pitch",
     "href": "Projects/ds250_project_0.html#elevator-pitch",
     "title": "Client Report - [Project 0]",
-    "section": "Elevator pitch",
-    "text": "Elevator pitch\nA SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\nA Client has requested this analysis and this is your one shot of what you would say to your boss in a 2 min elevator ride before he takes your report and hands it to the client.\n\n\nRead and format project data\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
+    "section": "",
+    "text": "__The data that I have illustrated in the scatterplot and table bellow explores the relationship between the highway miles per gallon and the engine displacement which is the amount of air moved by the car’s cylinders wether that be in or out of it. I found a trend where, the lower the engine displacement, the higher the miles per gallon were on the highways. Towards the end of the chart, I noticed a few outliers with some of the higher displacement engines having I higher value of miles per gallon than their counterparts. Something like this may suggest that the chart may continue in an upward trend._\n\n\nShow the code\nmpg = pd.read_csv(\"https://raw.githubusercontent.com/byuidatascience/data4python4ds/master/data-raw/mpg/mpg.csv\")\n\n\nI believe I have everything running smoothly. I uninstalled python 3.12 and reinstalled python 3.11.7 to be safe. I have no other questions at this time.",
     "crumbs": [
       "DS250 Projects",
       "Project 0"
     ]
   },
   {
-    "objectID": "Projects/ds250_project_0.html#questiontask-1",
-    "href": "Projects/ds250_project_0.html#questiontask-1",
+    "objectID": "Projects/ds250_project_0.html#manufacturer-scatterplot",
+    "href": "Projects/ds250_project_0.html#manufacturer-scatterplot",
     "title": "Client Report - [Project 0]",
-    "section": "Question|Task 1",
-    "text": "Question|Task 1\nCOPY PASTE QUESTION|TASK 1 FROM THE PROJECT HERE\nAdd details here to answer the question but NOT like an assignment Q&A. You need to write your answers as a consulting solution report. A Client needs to understand the answer, but also needs to understand the decisions that went into the answer (when applicable).\ninclude figures in chunks and discuss your findings in the figure.\n\nYOU SHOULD HAVE QUALITY WRITING THAT DESCRIBES YOUR CHARTS AND TABLES.\nWE HIGHLY RECOMMEND GRAMMARLY TO FIX YOUR SPELLING AND GRAMMAR. WRITING TAKES TIME TO BE CLEAR. SPEND THE TIME TO PRACITCE.\nYOU SHOULD HAVE QUALITY COMMENTS THAT DESCRIBES YOUR CODES. OFTEN CODEERS WORK IN TEAMS AND YOU NEED TO HAVE QUALTIY COMMENTS FOR YOUR TEAM AND YOURSELF. YOU MAY NEED TO REVISIT CODE YOU WROTE OVER A YEAR AGO, AND IF YOU DONT COMMENT IT NOW YOU WONT REMEMBER WHY YOU DID WHAT YOU DID.\n\n\n\nRead and format data\n# Include and execute your code here\nmpg = pd.read_csv(\"https://raw.githubusercontent.com/byuidatascience/data4python4ds/master/data-raw/mpg/mpg.csv\")\n\n\ninclude figures in chunks and discuss your findings in the figure.\n::: {#cell-Q1 chart .cell execution_count=4}\n\nplot example\n# Include and execute your code here\n\nchart = px.scatter(mpg.head(200),\n    x=\"displ\", \n    y=\"hwy\"\n)\nchart.show()\n\n\n                                                \nMy useless chart\n\n:::\n\n_PROVIDE TABLES THAT HELP ADDRESS THE QUESTIONS AND TASKS (IF APPLICABLE).\n\n\n\ntable example\n# Include and execute your code here\nprint(mpg\n  .head(5)\n  .filter([\"manufacturer\", \"model\",\"year\", \"hwy\"])\n  .to_markdown(index=False))\n\n\n| manufacturer   | model   |   year |   hwy |\n|:---------------|:--------|-------:|------:|\n| audi           | a4      |   1999 |    29 |\n| audi           | a4      |   1999 |    29 |\n| audi           | a4      |   2008 |    31 |\n| audi           | a4      |   2008 |    30 |\n| audi           | a4      |   1999 |    26 |",
+    "section": "Manufacturer Scatterplot",
+    "text": "Manufacturer Scatterplot\nIt took a lot of hopping from source to source in the reading but it came to me slowly but surely. Below includes the scatterplot created in plotly which replicates the scatterplot in textbook 3.2.2.\n::: {#cell-Q2 chart .cell execution_count=3}\n\nplot example\nchart = px.scatter(mpg.head(200),\n    x=\"displ\", \n    y=\"hwy\",\n    color=\"manufacturer\"\n)\nchart.show()\n\n\n                                                \nScatterplot\n\n:::",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 0"
+    ]
+  },
+  {
+    "objectID": "Projects/ds250_project_0.html#manufacturer-markdown-table",
+    "href": "Projects/ds250_project_0.html#manufacturer-markdown-table",
+    "title": "Client Report - [Project 0]",
+    "section": "Manufacturer Markdown Table",
+    "text": "Manufacturer Markdown Table\nThe markdown table took quite a while for me to figure out how to render it. I needed to install tabulate to have my code generate the table. My syntax initially to install it was incorrect. after finding the correct synax I was able to move forward. The markdown table that was generated featured five of the same audi model a4 from different years. I found that the audi’s that were from earlier years like 1999 had a lower highway miles per gallon than their counterparts from 2008. This may suggest that as time has moved forward the engine displacement has gotten lower and more efficient.\n\n\ntable\nprint(mpg\n  .head(5)\n  .filter([\"manufacturer\", \"model\",\"year\", \"hwy\"])\n  .to_markdown(index=False))\n\n\n| manufacturer   | model   |   year |   hwy |\n|:---------------|:--------|-------:|------:|\n| audi           | a4      |   1999 |    29 |\n| audi           | a4      |   1999 |    29 |\n| audi           | a4      |   2008 |    31 |\n| audi           | a4      |   2008 |    30 |\n| audi           | a4      |   1999 |    26 |",
     "crumbs": [
       "DS250 Projects",
       "Project 0"
