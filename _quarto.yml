@@ -2,15 +2,15 @@ project:
   type: website
 
 website:
-  title: "Your_Name Data Science Portfolio"
+  title: "McKay Clark's Data Science Portfolio"
   favicon: Images/favicon.png
   back-to-top-navigation: true
-  repo-url: https://github.com/your_url
-  #repo-actions: [issue] #if you want to allow others to report issues on your site uncomment this line
+  repo-url: https://mckayclark1.github.io/mckayclarkds-portfolio/
+  repo-actions: [issue] #if you want to allow others to report issues on your site uncomment this line
 
   page-footer: 
     border: true
-    left: "Your_Name 2023©"
+    left: "McKay Clark 2023©"
     right: 
       - icon: linkedin
         href: Your_LinkedIn_URL
@@ -46,6 +46,9 @@ website:
         - text: "DS250 Projects"
           file: projects.qmd
         - text: "---"
+        - text: "Project 0"
+          file: Projects/ds250_project_0.qmd
+        - text: "---"
         - text: "Project 1"
           file: Projects/project1.qmd
         - text: "---"
@@ -70,7 +73,7 @@ format:
       light: flatly # more themes can be found [here](https://quarto.org/docs/output-formats/html-themes.html)
       dark: darkly
       #light: cosmo
-      #dark: [cosmo, theme-dark.scss]
+      dark: [cosmo, theme-dark.scss]
     css: styles.css
     toc: true
 
