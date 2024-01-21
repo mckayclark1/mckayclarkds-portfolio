@@ -25,8 +25,6 @@ execute:
     
 ---
 
-_THIS `.qmd` FILE SHOULD BE USED TO WRITE YOUR REPORT.  YOU WILL NEED TO COMPILE THE REPORT INTO A `.html` DOCUMENT AND SUBMIT IT ON CANVAS._
-
 ```{python}
 #| label: libraries
 #| include: false
@@ -37,66 +35,49 @@ import plotly.express as px
 
 
 ## Elevator pitch
-_A SHORT (4-5 SENTENCES) PARAGRAPH THAT `DESCRIBES KEY INSIGHTS` TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS._
 
-_A Client has requested this analysis and this is your one shot of what you would say to your boss in a 2 min elevator ride before he takes your report and hands it to the client._
-
-```{python}
-#| label: project data
-#| code-summary: Read and format project data
-# Include and execute your code here
-df = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv")
-```
-
-__Highlight the Questions and Tasks__
-
-## Question|Task 1
-
-__COPY PASTE QUESTION|TASK 1 FROM THE PROJECT HERE__
-
-_Add details here to answer the question but `NOT` like an assignment Q&A. You need to `write your answers as a consulting solution report`. A Client needs to understand the answer, but also needs to understand the decisions that went into the answer (when applicable)._
-
-_include figures in chunks and discuss your findings in the figure._
-
-- _YOU SHOULD HAVE QUALITY WRITING THAT DESCRIBES YOUR CHARTS AND TABLES._
-
-- _WE HIGHLY RECOMMEND [GRAMMARLY](https://grammarly.com/) TO FIX YOUR SPELLING AND GRAMMAR. WRITING TAKES TIME TO BE CLEAR. SPEND THE TIME TO PRACITCE._ 
-
-- _YOU SHOULD HAVE QUALITY COMMENTS THAT DESCRIBES YOUR CODES. OFTEN CODEERS WORK IN TEAMS AND YOU NEED TO HAVE QUALTIY COMMENTS FOR YOUR TEAM AND YOURSELF. YOU MAY NEED TO REVISIT CODE YOU WROTE OVER A YEAR AGO, AND IF YOU DONT COMMENT IT NOW YOU WONT REMEMBER WHY YOU DID WHAT YOU DID._
+__The data that I have illustrated in the scatterplot and table bellow explores the relationship between the highway miles per gallon and the engine displacement which is the amount of air moved by the car's cylinders wether that be in or out of it. I found a trend where, the lower the engine displacement, the higher the miles per gallon were on the highways. Towards the end of the chart, I noticed a few outliers with some of the higher displacement engines having I higher value of miles per gallon than their counterparts. Something like this may suggest that the chart may continue in an upward trend._
 
 ```{python}
-#| label: Q1
-#| code-summary: Read and format data
-# Include and execute your code here
 mpg = pd.read_csv("https://raw.githubusercontent.com/byuidatascience/data4python4ds/master/data-raw/mpg/mpg.csv")
 
 ```
 
-_include figures in chunks and discuss your findings in the figure._
+_I believe I have everything running smoothly. I uninstalled python 3.12 and reinstalled python 3.11.7 to be safe. I have no other questions at this time._
+
+
+## Manufacturer Scatterplot
+
+
+_It took a lot of hopping from source to source in the reading but it came to me slowly but surely. Below includes the scatterplot created in plotly which replicates the scatterplot in textbook 3.2.2._
+
 
 ```{python}
-#| label: Q1 chart
+#| label: Q2 chart
 #| code-summary: plot example
-#| fig-cap: "My useless chart"
+#| fig-cap: "Scatterplot"
 #| fig-align: center
-# Include and execute your code here
 
 chart = px.scatter(mpg.head(200),
     x="displ", 
-    y="hwy"
+    y="hwy",
+    color="manufacturer"
 )
 chart.show()
 ```
 
 
-- _PROVIDE TABLES THAT HELP ADDRESS THE QUESTIONS AND TASKS (IF APPLICABLE).
+## Manufacturer Markdown Table
+
+
+_The markdown table took quite a while for me to figure out how to render it. I needed to install tabulate to have my code generate the table. My syntax initially to install it was incorrect. after finding the correct synax I was able to move forward. The markdown table that was generated featured five of the same audi model a4 from different years. I found that the audi's that were from earlier years like 1999 had a lower highway miles per gallon than their counterparts from 2008. This may suggest that as time has moved forward the engine displacement has gotten lower and more efficient._
+
 
 ```{python}
-#| label: Q1 table
-#| code-summary: table example
-#| tbl-cap: "table example"
+#| label: Q3 table
+#| code-summary: table
+#| tbl-cap: "table"
 #| tbl-cap-location: top
-# Include and execute your code here
 print(mpg
   .head(5)
   .filter(["manufacturer", "model","year", "hwy"])
