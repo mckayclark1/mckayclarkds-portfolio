@@ -2,23 +2,23 @@
   {
     "objectID": "story_telling.html",
     "href": "story_telling.html",
-    "title": "about me",
+    "title": "About me",
     "section": "",
-    "text": "MarkDown Basics"
+    "text": "Hi, My name is McKay Clark. I am 24 and am a student at Brigham Young University Idaho who is trying to figure out what to study that relates to coding and computers. I’m currently looking into software engineering or web development, but I am open to the many other options offered here as well. I love to play guitar, sing, be outside and play video games. I currently work as a sales associate in the men’s department for Dillards in Idaho Falls."
   },
   {
     "objectID": "story_telling.html#title-2-header",
     "href": "story_telling.html#title-2-header",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics"
+    "title": "About me",
+    "section": "Title 2 Header",
+    "text": "Title 2 Header\nMarkDown Basics"
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "DS250 Projects",
     "section": "",
-    "text": "Project 1\nProject 2\nProject 3\nProject 4\nProject 5",
+    "text": "Project 0\nProject 1\nProject 2\nProject 3\nProject 4\nProject 5",
     "crumbs": [
       "DS250 Projects"
     ]
@@ -28,7 +28,7 @@
     "href": "projects.html#repo-for-all-my-projects",
     "title": "DS250 Projects",
     "section": "",
-    "text": "Project 1\nProject 2\nProject 3\nProject 4\nProject 5",
+    "text": "Project 0\nProject 1\nProject 2\nProject 3\nProject 4\nProject 5",
     "crumbs": [
       "DS250 Projects"
     ]
