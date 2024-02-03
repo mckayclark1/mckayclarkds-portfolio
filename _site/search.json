@@ -274,9 +274,9 @@
   {
     "objectID": "Projects/project1.html",
     "href": "Projects/project1.html",
-    "title": "Client Report - [Insert Project Title]",
+    "title": "Client Report - [Project 1]",
     "section": "",
-    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
+    "text": "For my research I decided to look at a data set with names and pose a few questions to the data. I first looked at my name and how it was used both in my birth year and in the rest of it’s usage history to see if my name was used more or less before and after that year. I then decided to look at the name “Brittany”‘s’ usage to determine what age I would guess a person this year would most likely be if they had that name. Next, I studied the trends in name usage for Mary, Martha, Peter, and Paul to see what trends those names followed from 1920 - 2000. Finally I compared main character names and their usages in history to the release date of the movie to see if there was any correlation between the two.\n\n\nRead and format project data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
     "crumbs": [
       "DS250 Projects",
       "Project 1"
@@ -285,9 +285,9 @@
   {
     "objectID": "Projects/project1.html#elevator-pitch",
     "href": "Projects/project1.html#elevator-pitch",
-    "title": "Client Report - [Insert Project Title]",
+    "title": "Client Report - [Project 1]",
     "section": "",
-    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
+    "text": "For my research I decided to look at a data set with names and pose a few questions to the data. I first looked at my name and how it was used both in my birth year and in the rest of it’s usage history to see if my name was used more or less before and after that year. I then decided to look at the name “Brittany”‘s’ usage to determine what age I would guess a person this year would most likely be if they had that name. Next, I studied the trends in name usage for Mary, Martha, Peter, and Paul to see what trends those names followed from 1920 - 2000. Finally I compared main character names and their usages in history to the release date of the movie to see if there was any correlation between the two.\n\n\nRead and format project data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
     "crumbs": [
       "DS250 Projects",
       "Project 1"
@@ -456,5 +456,49 @@
     "title": "McKay Clark’s Resume",
     "section": "",
     "text": "May 2018-September 2018 Car Wash Associate for Epic Shine, Meridian, ID\n\nWorked with a team to give top of the line customer service.\nPreformed janitorial services around the carwash.\nInstructed people in the proper way to use an automated car wash.\n\n2018-2020 Religious Missionary, Kansas\n\nStudied rigorously from religious texts daily.\nTaught lessons on religious topics as a team.\nAttended trainings to become better missionaries.\n\nApril 2020-September 2020 Warehouse Associate for Scentsy, Meridian, ID\n\nTasked with Moving, packing, shipping, and restocking merchandise.\nTaught to put merchandise together.\n\nApril 2021-November 2021 Security Guard for Amazon, Meridian, ID\n\nTrained to identify threats to the facility, de-escalate potentially harmful situations, and observe and report suspicious activities to the proper authorities.\nPatrolled the building every hour to regulate the environment and discourage mischief.\nTrained to respond in emergency situations as an escort and administer CPR as needed.\n\nApril 2023-June 2023 Gas Station Clerk for Good 2 Go, Rigby, ID\n\nCompleted purchases for merchandise and/or gas.\nKept gas station and work area clean and tidy.\nPreformed simple maintenance on machinery.\n\nJuly 2023-Present Day Tailored Clothing Specialist for Dillards, Idaho Falls, ID\n\nHelp customers find what they want and need through asking questions and giving suggestions.\nTeach customers about the benefits of using a Dillards credit card and gude them through the application process.\nMeasure customers so they are getting the right fit for them in a variety of shirts, slacks, and suits."
+  },
+  {
+    "objectID": "Projects/project1.html#my-name",
+    "href": "Projects/project1.html#my-name",
+    "title": "Client Report - [Project 1]",
+    "section": "My Name",
+    "text": "My Name\nHow does your name at your birth year compare to its use historically?\nBefore my birth year, we see that the common usage of my name starts in 1976 and from that time till 1985 the total number of babies born with that name stays roughly between 5 and 8 per year with one exception in 1977 with 0 reported. From there we see a sharp upward trend which ends in a peak usage of 72 total in 1995. from there we see it dip down to 39 in 1998 and 1999. After my birth year, the name usage shows a downward trend with a spike of usage every few years.\n\n\nRead and format data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\").query(\"name == 'Mckay'\")\n\n\n::: {#cell-Q1 chart .cell execution_count=4}\n\nplot example\nchart = px.bar(df.head(200),\n    x=\"year\", \n    y=\"Total\",\n    color=\"name\",\n    title=\"Total Number of Babies per Year Named 'Mckay'\"\n)\nchart.add_annotation(x=1999, y=39,\n            text=\"My birth year\",\n            showarrow=True,\n            arrowhead=1)\nchart.add_annotation(x=1976, y=8,\n            text=\"Name starts to be used more frequently\",\n            showarrow=False,\n            yshift=10)\nchart.add_annotation(x=1986, y=15,\n            text=\"Name usage shows upward trend\",\n            showarrow=False,\n            yshift=10)\nchart.add_annotation(x=1995, y=72,\n            text=\"Peak usage of name\",\n            showarrow=False,\n            yshift=10)\nchart.add_annotation(x=2002, y=54,\n            text=\"Name usage shows downward trend\",\n            showarrow=False,\n            yshift=10)\nchart.show()\n\n\n                                                \n\n:::",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 1"
+    ]
+  },
+  {
+    "objectID": "Projects/project1.html#brittany",
+    "href": "Projects/project1.html#brittany",
+    "title": "Client Report - [Project 1]",
+    "section": "Brittany",
+    "text": "Brittany\nIf you talked to someone named Brittany on the phone, what is your guess of his or her age? What ages would you not guess?\nIf I were to go off of a random guess, I would say they would probably be in their 30s right now. Based off of the chart of name usage per year, my guess is accurate because it is more likely someone named Brittany will be in their 30s. I would probably not guess anyone in their 20s or lower or anyone in their 40s or higher\n\n\nRead and format data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\").query(\"name == 'Brittany'\")\n\n\n::: {#cell-Q2 chart .cell execution_count=6}\n\nplot example\nchart = px.bar(df.head(200),\n    x=\"year\", \n    y=\"Total\",\n    color=\"name\",\n    title=\"Total Number of Babies per Year Named 'Brittany'\"\n)\nchart.add_annotation(x=1986, y=17856.5,\n    text=\"Start of Brittany in their 30s / My guess\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1976, y=304,\n    text=\"Brittany in 20s. Would not guess this or lower\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1996, y=13796,\n    text=\"Brittany in 40s. Would not guess this or higher\",\n    showarrow=True,\n    arrowhead=1)\nchart.show()\n\n\n                                                \n\n:::",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 1"
+    ]
+  },
+  {
+    "objectID": "Projects/project1.html#christian-names",
+    "href": "Projects/project1.html#christian-names",
+    "title": "Client Report - [Project 1]",
+    "section": "Christian Names",
+    "text": "Christian Names\nMary, Martha, Peter, and Paul are all Christian names. From 1920 - 2000, compare the name usage of each of the four names. What trends do you notice?\nThe biggest thing I noticed right off the bat is that the name ‘Mary’ has by far the highest usage from 1920 all the way until 1968 where we see ‘Paul’ overtake. ‘Mary’ then makes a ressurgance in between 1988 and 1989 and becomes, once again, the most used name on through 2000. ‘Paul’, throughout the years is always higher in usage than both ‘Martha’ and ‘Peter’ and only being supassed by ‘Mary’ for the majority of the time. ‘Martha’ stays above ‘Peter’ and below ‘Paul’ from 1920 till 1953 where it dips below ‘Peter’ securing it’s spot as the least used name of the bunch overall. ‘Peter’ starts off as the lowest used name from 1920 until 1953 where it surpasses ‘Martha’. From then on it remains above ‘Martha’ and becomes the second lowest used name overall. Something interesting to note is that in all of the names, I noticed the beginning of an upward trend in all of them around 1936 with ‘Peter’ and ‘Paul’ being the only ones that started the upward trend a few years earlier. We also see a drastic fall for ‘Mary’, ‘Paul’, and ‘Peter’ between the years of 1950 and 1976. ‘Martha’, for whatever reason, started this trend earlier in 1952.\n\n\nRead and format data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\").query(\"name in ['Peter','Paul','Mary','Martha'] & year &gt;= 1920 & year &lt;=2000\")\n\n\n::: {#cell-Q3 chart .cell execution_count=8}\n\nplot example\nchart = px.line(df.head(1000),\n    x=\"year\", \n    y=\"Total\",\n    color=\"name\",\n    title=\"Historical Usage of 'Mary', 'Martha', 'Peter', and 'Paul'\"\n)\nchart.add_annotation(x=1950, y=53791,\n    text=\"Peak of Usage: Mary\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1954, y=25662.5,\n    text=\"Peak of Usage: Paul\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1947, y=10651,\n    text=\"Peak of Usage: Martha\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1956, y=11321,\n    text=\"Peak of Usage: Peter\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2000, y=6184,\n    text=\"Lowest Usage: Mary\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2000, y=3786,\n    text=\"Lowest Usage: Paul\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1932, y=2694.5,\n    text=\"Lowest Usage: Peter\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1999, y=693,\n    text=\"Lowest Usage: Martha\",\n    showarrow=True,\n    arrowhead=1)\nchart.show()\n\n\n                                                \n\n:::",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 1"
+    ]
+  },
+  {
+    "objectID": "Projects/project1.html#movie-names",
+    "href": "Projects/project1.html#movie-names",
+    "title": "Client Report - [Project 1]",
+    "section": "Movie Names",
+    "text": "Movie Names\nThink of a unique name from a famous movie. Plot the usage of that name and see how changes line up with the movie release. Does it look like the movie had an effect on usage?\n_I decided to plot the usages of four names: Flynn, Tony, Elsa, and Jack. These are the names of the main characters in Tangled, Pirates of the Caribbean, Frozen, and Iron-Man respectively. I plotted them so I could see if there was any correltion between usage, and the years those movies were released. From what I could see from the data, There was a sharp rise in usage of the name Jack a year after the Pirates movie came out. This one is tough because it seems like there wasn’t a sharp increase in usage until about a year after it came out. I could attribute the usage spike to the movie’s release but I’m not 100% sure. With Elsa, and Flynn, We see a sharp spike in usage after their movies were released suggesting that the movies did cause that spike. As for Tony, we actually see a downward trend start a few years before the Iron-Man movie released. It is hard to determine wether the movie had a significant impact on that name’s usage.\n\n\nRead and format data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\").query(\"name in ['Flynn','Jack','Elsa','Tony']\")\n\n\n::: {#cell-Q4 chart .cell execution_count=10}\n\nplot example\nchart = px.line(df.head(1000),\n    x=\"year\", \n    y=\"Total\",\n    color=\"name\",\n    title=\"Historical Usage of 'Flynn', 'Jack', 'Elsa', and 'Tony'\"\n)\n\nchart.add_annotation(x=2003, y=9316,\n    text=\"Pirates of the Caribbean released\", #|We see a 232 usage increase from 2003 to 2004 after pirates 1. We see a much bigger differance in from 2004 to 2005.\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2010, y=24,\n    text=\"Tangled released\", #| See a differance of 129 for the next year\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2013, y=525,\n    text=\"Frozen released\", #| Differance of 580 next year\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2008, y=853,\n    text=\"Iron-Man released\", #| Down 77 next year\n    showarrow=True,\n    arrowhead=1)\n\nchart.show()\n\n\n                                                \n\n:::",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 1"
+    ]
   }
 ]

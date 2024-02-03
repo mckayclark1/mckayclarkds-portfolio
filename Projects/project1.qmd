@@ -1,7 +1,7 @@
 ---
-title: "Client Report - [Insert Project Title]"
+title: "Client Report - [Project 1]"
 subtitle: "Course DS 250"
-author: "[STUDENT NAME]"
+author: "[McKay Clark]"
 format:
   html:
     self-contained: true
@@ -36,157 +36,216 @@ import plotly.express as px
 
 ## Elevator pitch
 
-_paste your elevator pitch here_
-_A SHORT (4-5 SENTENCES) PARAGRAPH THAT `DESCRIBES KEY INSIGHTS` TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS._
+_For my research I decided to look at a data set with names and pose a few questions to the data. I first looked at my name and how it was used both in my birth year and in the rest of it's usage history to see if my name was used more or less before and after that year. I then decided to look at the name "Brittany"'s' usage to determine what age I would guess a person this year would most likely be if they had that name. Next, I studied the trends in name usage for Mary, Martha, Peter, and Paul to see what trends those names followed from 1920 - 2000. Finally I compared main character names and their usages in history to the release date of the movie to see if there was any correlation between the two._
 
 ```{python}
 #| label: project data
 #| code-summary: Read and format project data
-# Include and execute your code here
 df = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv")
 ```
 
 __Highlight the Questions and Tasks__
 
-## QUESTION|TASK 1
+## My Name
 
-__COPY PASTE QUESTION|TASK 1 FROM THE PROJECT HERE__
+__How does your name at your birth year compare to its use historically?__
 
-_type your results and analysis here_
+_Before my birth year, we see that the common usage of my name starts in 1976 and from that time till 1985 the total number of babies born with that name stays roughly between 5 and 8 per year with one exception in 1977 with 0 reported. From there we see a sharp upward trend which ends in a peak usage of 72 total in 1995. from there we see it dip down to 39 in 1998 and 1999. After my birth year, the name usage shows a downward trend with a spike of usage every few years._
 
 ```{python}
 #| label: Q1
 #| code-summary: Read and format data
-# Include and execute your code here
-
+df = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv").query("name == 'Mckay'")
 
 ```
-
-_include figures in chunks and discuss your findings in the figure._
 
 ```{python}
 #| label: Q1 chart
 #| code-summary: plot example
-#| fig-cap: "My useless chart"
+#| fig-cap: ""
 #| fig-align: center
-# Include and execute your code here
 chart = px.bar(df.head(200),
-    x="name", 
-    y="AK"
+    x="year", 
+    y="Total",
+    color="name",
+    title="Total Number of Babies per Year Named 'Mckay'"
 )
+chart.add_annotation(x=1999, y=39,
+            text="My birth year",
+            showarrow=True,
+            arrowhead=1)
+chart.add_annotation(x=1976, y=8,
+            text="Name starts to be used more frequently",
+            showarrow=False,
+            yshift=10)
+chart.add_annotation(x=1986, y=15,
+            text="Name usage shows upward trend",
+            showarrow=False,
+            yshift=10)
+chart.add_annotation(x=1995, y=72,
+            text="Peak usage of name",
+            showarrow=False,
+            yshift=10)
+chart.add_annotation(x=2002, y=54,
+            text="Name usage shows downward trend",
+            showarrow=False,
+            yshift=10)
 chart.show()
 ```
 
+## Brittany
 
-```{python}
-#| label: Q1 table
-#| code-summary: table example
-#| tbl-cap: "Not much of a table"
-#| tbl-cap-location: top
-# Include and execute your code here
-mydat = df.head(1000)\
-    .groupby('year')\
-    .sum()\
-    .reset_index()\
-    .tail(10)\
-    .filter(["year", "AK","AR"])
+__If you talked to someone named Brittany on the phone, what is your guess of his or her age? What ages would you not guess?__
 
-display(mydat)
-
-```
-
-
-## QUESTION|TASK 2
-
-__COPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE__
-
-_type your results and analysis here_
+_If I were to go off of a random guess, I would say they would probably be in their 30s right now. Based off of the chart of name usage per year, my guess is accurate because it is more likely someone named Brittany will be in their 30s. I would probably not guess anyone in their 20s or lower or anyone in their 40s or higher_
 
 ```{python}
 #| label: Q2
 #| code-summary: Read and format data
-# Include and execute your code here
-
+df = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv").query("name == 'Brittany'")
 
 ```
 
-_include figures in chunks and discuss your findings in the figure._
 
 ```{python}
 #| label: Q2 chart
 #| code-summary: plot example
-#| fig-cap: "My useless chart"
+#| fig-cap: ""
 #| fig-align: center
-# Include and execute your code here
 chart = px.bar(df.head(200),
-    x="name", 
-    y="AK"
+    x="year", 
+    y="Total",
+    color="name",
+    title="Total Number of Babies per Year Named 'Brittany'"
 )
+chart.add_annotation(x=1986, y=17856.5,
+    text="Start of Brittany in their 30s / My guess",
+    showarrow=True,
+    arrowhead=1)
+
+chart.add_annotation(x=1976, y=304,
+    text="Brittany in 20s. Would not guess this or lower",
+    showarrow=True,
+    arrowhead=1)
+
+chart.add_annotation(x=1996, y=13796,
+    text="Brittany in 40s. Would not guess this or higher",
+    showarrow=True,
+    arrowhead=1)
 chart.show()
 ```
 
+## Christian Names
 
-```{python}
-#| label: Q2 table
-#| code-summary: table example
-#| tbl-cap: "Not much of a table"
-#| tbl-cap-location: top
-# Include and execute your code here
-mydat = df.head(1000)\
-    .groupby('year')\
-    .sum()\
-    .reset_index()\
-    .tail(10)\
-    .filter(["year", "AK","AR"])
+__Mary, Martha, Peter, and Paul are all Christian names. From 1920 - 2000, compare the name usage of each of the four names. What trends do you notice?__
 
-display(mydat)
-
-```
-
-
-## QUESTION|TASK 3
-
-__COPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE__
-
-_type your results and analysis here_
+_The biggest thing I noticed right off the bat is that the name 'Mary' has by far the highest usage from 1920 all the way until 1968 where we see 'Paul' overtake. 'Mary' then makes a ressurgance in between 1988 and 1989 and becomes, once again, the most used name on through 2000. 'Paul', throughout the years is always higher in usage than both 'Martha' and 'Peter' and only being supassed by 'Mary' for the majority of the time. 'Martha' stays above 'Peter' and below 'Paul' from 1920 till 1953 where it dips below 'Peter' securing it's spot as the least used name of the bunch overall. 'Peter' starts off as the lowest used name from 1920 until 1953 where it surpasses 'Martha'. From then on it remains above 'Martha' and becomes the second lowest used name overall. Something interesting to note is that in all of the names, I noticed the beginning of an upward trend in all of them around 1936 with 'Peter' and 'Paul' being the only ones that started the upward trend a few years earlier. We also see a drastic fall for 'Mary', 'Paul', and 'Peter' between the years of 1950 and 1976. 'Martha', for whatever reason, started this trend earlier in 1952._
 
 ```{python}
 #| label: Q3
 #| code-summary: Read and format data
-# Include and execute your code here
-
+df = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv").query("name in ['Peter','Paul','Mary','Martha'] & year >= 1920 & year <=2000")
 
 ```
 
-_include figures in chunks and discuss your findings in the figure._
 
 ```{python}
 #| label: Q3 chart
 #| code-summary: plot example
-#| fig-cap: "My useless chart"
+#| fig-cap: ""
 #| fig-align: center
-# Include and execute your code here
-chart = px.bar(df.head(200),
-    x="name", 
-    y="AK"
+chart = px.line(df.head(1000),
+    x="year", 
+    y="Total",
+    color="name",
+    title="Historical Usage of 'Mary', 'Martha', 'Peter', and 'Paul'"
 )
+chart.add_annotation(x=1950, y=53791,
+    text="Peak of Usage: Mary",
+    showarrow=True,
+    arrowhead=1)
+
+chart.add_annotation(x=1954, y=25662.5,
+    text="Peak of Usage: Paul",
+    showarrow=True,
+    arrowhead=1)
+
+chart.add_annotation(x=1947, y=10651,
+    text="Peak of Usage: Martha",
+    showarrow=True,
+    arrowhead=1)
+
+chart.add_annotation(x=1956, y=11321,
+    text="Peak of Usage: Peter",
+    showarrow=True,
+    arrowhead=1)
+
+chart.add_annotation(x=2000, y=6184,
+    text="Lowest Usage: Mary",
+    showarrow=True,
+    arrowhead=1)
+
+chart.add_annotation(x=2000, y=3786,
+    text="Lowest Usage: Paul",
+    showarrow=True,
+    arrowhead=1)
+
+chart.add_annotation(x=1932, y=2694.5,
+    text="Lowest Usage: Peter",
+    showarrow=True,
+    arrowhead=1)
+
+chart.add_annotation(x=1999, y=693,
+    text="Lowest Usage: Martha",
+    showarrow=True,
+    arrowhead=1)
 chart.show()
 ```
 
+## Movie Names
+
+__Think of a unique name from a famous movie. Plot the usage of that name and see how changes line up with the movie release. Does it look like the movie had an effect on usage?__
+
+_I decided to plot the usages of four names: Flynn, Tony, Elsa, and Jack. These are the names of the main characters in Tangled, Pirates of the Caribbean, Frozen, and Iron-Man respectively. I plotted them so I could see if there was any correltion between usage, and the years those movies were released. From what I could see from the data, There was a sharp rise in usage of the name Jack a year after the Pirates movie came out. This one is tough because it seems like there wasn't a sharp increase in usage until about a year after it came out. I could attribute the usage spike to the movie's release but I'm not 100% sure. With Elsa, and Flynn, We see a sharp spike in usage after their movies were released suggesting that the movies did cause that spike. As for Tony, we actually see a downward trend start a few years before the Iron-Man movie released. It is hard to determine wether the movie had a significant impact on that name's usage.
 
 ```{python}
-#| label: Q3 table
-#| code-summary: table example
-#| tbl-cap: "Not much of a table"
-#| tbl-cap-location: top
-# Include and execute your code here
-mydat = df.head(1000)\
-    .groupby('year')\
-    .sum()\
-    .reset_index()\
-    .tail(10)\
-    .filter(["year", "AK","AR"])
+#| label: Q4
+#| code-summary: Read and format data
+df = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv").query("name in ['Flynn','Jack','Elsa','Tony']")
 
-display(mydat)
+```
 
+```{python}
+#| label: Q4 chart
+#| code-summary: plot example
+#| fig-cap: ""
+#| fig-align: center
+chart = px.line(df.head(1000),
+    x="year", 
+    y="Total",
+    color="name",
+    title="Historical Usage of 'Flynn', 'Jack', 'Elsa', and 'Tony'"
+)
+
+chart.add_annotation(x=2003, y=9316,
+    text="Pirates of the Caribbean released", #|We see a 232 usage increase from 2003 to 2004 after pirates 1. We see a much bigger differance in from 2004 to 2005.
+    showarrow=True,
+    arrowhead=1)
+
+chart.add_annotation(x=2010, y=24,
+    text="Tangled released", #| See a differance of 129 for the next year
+    showarrow=True,
+    arrowhead=1)
+
+chart.add_annotation(x=2013, y=525,
+    text="Frozen released", #| Differance of 580 next year
+    showarrow=True,
+    arrowhead=1)
+
+chart.add_annotation(x=2008, y=853,
+    text="Iron-Man released", #| Down 77 next year
+    showarrow=True,
+    arrowhead=1)
+
+chart.show()
 ```
