@@ -1,0 +1,119 @@
+---
+title: "Client Report - [Project 3]"
+subtitle: "Course DS 250"
+author: "[McKay Clark]"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+execute: 
+  warning: false
+    
+---
+
+```{python}
+#| label: libraries
+#| include: false
+import pandas as pd
+import numpy as np
+import plotly.express as px
+import sqlite3
+```
+
+
+## Elevator pitch
+_In my analysis of the 'Lahmans baseball Database' I was able to aquire important data relating to certain player stats, team stats, and a comparison between two seperat teams. I was able to gather specific players who attended BYUI and displayed their salaries. I then found players who's batting averages met certain criteria. Finally I was able to compare the number of wins per year for two teams and conclude some interesting theories from the data_
+
+```{python}
+#| label: project data
+#| code-summary: Read and format project data
+# Include and execute your code here
+sqlite_file = 'lahmansbaseballdb.sqlite'
+```
+
+## BYUI Baseball Players
+
+__Write an SQL query to create a new dataframe about baseball players who attended BYU-Idaho. The new table should contain five columns: playerID, schoolID, salary, and the yearID/teamID associated with each salary. Order the table by salary (highest to lowest) and print out the table in your report.__
+
+_To aquire all the pertinent information, I ran a query that grabbed the relevant data from both the 'collegeplaying' and 'salaries' table in the database. Then, I had them reference eachother with common values so the data displayed from one table would be correctly matched up to the data of the other table. Finally, I filtered them to only show players that were from BYUI using 'schoolID' and alphebatized the results with salary sorted from highest to lowest._
+
+```{python}
+#| label: Q1
+#| code-summary: Read and format data
+# Include and execute your code here
+con = sqlite3.connect(sqlite_file)
+q = 'SELECT collegeplaying.playerID, collegeplaying.schoolID, collegeplaying.yearID, salaries.teamID, salaries.salary FROM collegeplaying, salaries WHERE collegeplaying.playerID = salaries.playerID AND schoolID = "idbyuid" ORDER BY salary DESC'
+results = pd.read_sql_query(q,con)
+
+results
+
+```
+
+## Batting Averages
+
+__This three-part question requires you to calculate batting average (number of hits divided by the number of at-bats) a. Write an SQL query that provides playerID, yearID, and batting average for players with at least 1 at bat that year. Sort the table from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report. b. Use the same query as above, but only include players with at least 10 at bats that year. Print the top 5 results. c. Now calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats, and print the top 5 results.__
+
+_For this part, I calculated the batting averages per year for students who met three instances of certain criteria. In the first instance I returned the batting averages of players who had at least one 'at bat' the years they played. In the second instance, I returned the averages of players with at least 10 'at bats'. Finally, I calculated the students 'total_battingAverage' over their entire careers and returned those results. All results were returned in alphabetical order by playerID and sorted from highest to lowest batting average._
+
+```{python}
+#| label: Q2 A
+con = sqlite3.connect(sqlite_file)
+q = 'SELECT playerID, yearID, (CAST(H AS FLOAT)/CAST(AB AS FLOAT)) AS battingAverage FROM batting WHERE AB >=1 ORDER BY battingAverage DESC, playerID LIMIT 5'
+results = pd.read_sql_query(q,con)
+
+results
+
+```
+
+```{python}
+#| label: Q2 B
+con = sqlite3.connect(sqlite_file)
+q = 'SELECT playerID, yearID, (CAST(H AS FLOAT)/CAST(AB AS FLOAT)) AS battingAverage FROM batting WHERE AB >=10 ORDER BY playerID ASC, battingAverage DESC LIMIT 5'
+results = pd.read_sql_query(q,con)
+
+results
+
+```
+
+```{python}
+#| label: Q2 C
+con = sqlite3.connect(sqlite_file)
+q = 'SELECT playerID, yearID, (CAST(SUM(H) AS FLOAT)/CAST(SUM(AB) AS FLOAT)) AS total_battingAverage FROM batting WHERE AB >=100 GROUP BY playerID, yearID ORDER BY playerID ASC, total_battingAverage DESC LIMIT 5'
+results = pd.read_sql_query(q,con)
+
+results
+
+```
+
+## New York Mutuals V.S. Boston Red Stockings
+
+__Pick any two baseball teams and compare them using a metric of your choice (average salary, home runs, number of wins, etc). Write an SQL query to get the data you need, then make a graph using Plotly Express to visualize the comparison. What do you learn?__
+
+I plotted two seperate teams on a line graph showing the amount of 'wins' they had per year and compared them over the years. I wrote an sql query to obtain needed information like 'team', 'wins' and 'years' and then filtered them by the 'New York Mutuals' team and the 'Boston Red Stockings' team. I then grouped the data set by 'name' and 'yearID' to ensure that the query was ran for each instance of a unique pairing in the dataset. Lastly, I ordered the table by 'name' and 'yearID' to keep the generated table tidy. Once I had the completed query, I then imported that data into a line graph. From my observations, I noticed that both teams do fairly well with increasing their number of wins as years go on with them both generally showing an upward trend from 1871 to 1874. Interestingly enough, in the year 1874, we see the Boston Redstockings drastically increase in their wins into 1875 while the New York Mutuals, at the same time, decrease drastically in thier wins into 1875 and 1876. I dont suspect that ther may be alot of causation at play but I do think there is a correlation between the Boston Red Stocking increase and the New York Mutual decrease. It is possible that because the Boston Red Stockings may have set a new standard for number of wins possible in a year, other teams may have increased their wins against other teams and specifically with the New York Mutuals to compete with the Boston team.
+
+```{python}
+#| label: Q3
+con = sqlite3.connect(sqlite_file)
+q = 'SELECT name, yearID, SUM(W) AS totalWins FROM teams WHERE name IN ("New York Mutuals", "Boston Red Stockings") GROUP BY name, yearID ORDER BY name, yearID'
+
+results = pd.read_sql_query(q,con)
+
+line = px.line(results, x="yearID", y="totalWins", color="name", title='Number of Wins per Team, per Year')
+
+line.show()
+
+```
