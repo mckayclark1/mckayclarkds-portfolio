@@ -56,7 +56,7 @@ website:
           file: Projects/project2.qmd
         - text: "---"
         - text: "Project 3"
-          file: Projects/project3.qmd
+          file: Projects/ds250_project_3.qmd
         - text: "---"
         - text: "Project 4"
           file: Projects/project4.qmd

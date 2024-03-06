@@ -89,58 +89,69 @@
     ]
   },
   {
-    "objectID": "Projects/project2.html",
-    "href": "Projects/project2.html",
-    "title": "Client Report - [Insert Project Title]",
+    "objectID": "Projects/project1.html",
+    "href": "Projects/project1.html",
+    "title": "Client Report - [Project 1]",
     "section": "",
-    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
+    "text": "For my research I decided to look at a data set with names and pose a few questions to the data. I first looked at my name and how it was used both in my birth year and in the rest of it’s usage history to see if my name was used more or less before and after that year. I then decided to look at the name “Brittany”‘s’ usage to determine what age I would guess a person this year would most likely be if they had that name. Next, I studied the trends in name usage for Mary, Martha, Peter, and Paul to see what trends those names followed from 1920 - 2000. Finally I compared main character names and their usages in history to the release date of the movie to see if there was any correlation between the two.\n\n\nRead and format project data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
     "crumbs": [
       "DS250 Projects",
-      "Project 2"
+      "Project 1"
     ]
   },
   {
-    "objectID": "Projects/project2.html#elevator-pitch",
-    "href": "Projects/project2.html#elevator-pitch",
-    "title": "Client Report - [Insert Project Title]",
+    "objectID": "Projects/project1.html#elevator-pitch",
+    "href": "Projects/project1.html#elevator-pitch",
+    "title": "Client Report - [Project 1]",
     "section": "",
-    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
+    "text": "For my research I decided to look at a data set with names and pose a few questions to the data. I first looked at my name and how it was used both in my birth year and in the rest of it’s usage history to see if my name was used more or less before and after that year. I then decided to look at the name “Brittany”‘s’ usage to determine what age I would guess a person this year would most likely be if they had that name. Next, I studied the trends in name usage for Mary, Martha, Peter, and Paul to see what trends those names followed from 1920 - 2000. Finally I compared main character names and their usages in history to the release date of the movie to see if there was any correlation between the two.\n\n\nRead and format project data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
     "crumbs": [
       "DS250 Projects",
-      "Project 2"
+      "Project 1"
     ]
   },
   {
-    "objectID": "Projects/project2.html#questiontask-1",
-    "href": "Projects/project2.html#questiontask-1",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "QUESTION|TASK 1",
-    "text": "QUESTION|TASK 1\nCOPY PASTE QUESTION|TASK 1 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n::: {#cell-Q1 chart .cell execution_count=4}\n\nplot example\n# Include and execute your code here\nchart = px.bar(df.head(200),\n    x=\"name\", \n    y=\"AK\"\n)\nchart.show()\n\n\n                                                \nMy useless chart\n\n:::\n::: {#cell-Q1 table .cell .tbl-cap-location-top tbl-cap=‘Not much of a table’ execution_count=5}\n\ntable example\n# Include and execute your code here\nmydat = df.head(1000)\\\n    .groupby('year')\\\n    .sum()\\\n    .reset_index()\\\n    .tail(10)\\\n    .filter([\"year\", \"AK\",\"AR\"])\n\ndisplay(mydat)\n\n\n\n\n\n\n\n\n\nyear\nAK\nAR\n\n\n\n\n96\n2006\n21.0\n183.0\n\n\n97\n2007\n28.0\n153.0\n\n\n98\n2008\n36.0\n212.0\n\n\n99\n2009\n34.0\n179.0\n\n\n100\n2010\n22.0\n196.0\n\n\n101\n2011\n41.0\n148.0\n\n\n102\n2012\n28.0\n140.0\n\n\n103\n2013\n26.0\n134.0\n\n\n104\n2014\n20.0\n114.0\n\n\n105\n2015\n28.0\n121.0\n\n\n\n\n\n\n:::",
+    "objectID": "Projects/project1.html#my-name",
+    "href": "Projects/project1.html#my-name",
+    "title": "Client Report - [Project 1]",
+    "section": "My Name",
+    "text": "My Name\nHow does your name at your birth year compare to its use historically?\nBefore my birth year, we see that the common usage of my name starts in 1976 and from that time till 1985 the total number of babies born with that name stays roughly between 5 and 8 per year with one exception in 1977 with 0 reported. From there we see a sharp upward trend which ends in a peak usage of 72 total in 1995. from there we see it dip down to 39 in 1998 and 1999. After my birth year, the name usage shows a downward trend with a spike of usage every few years.\n\n\nRead and format data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\").query(\"name == 'Mckay'\")\n\n\n::: {#cell-Q1 chart .cell execution_count=4}\n\nplot example\nchart = px.bar(df.head(200),\n    x=\"year\", \n    y=\"Total\",\n    color=\"name\",\n    title=\"Total Number of Babies per Year Named 'Mckay'\"\n)\nchart.add_annotation(x=1999, y=39,\n            text=\"My birth year\",\n            showarrow=True,\n            arrowhead=1)\nchart.add_annotation(x=1976, y=8,\n            text=\"Name starts to be used more frequently\",\n            showarrow=False,\n            yshift=10)\nchart.add_annotation(x=1986, y=15,\n            text=\"Name usage shows upward trend\",\n            showarrow=False,\n            yshift=10)\nchart.add_annotation(x=1995, y=72,\n            text=\"Peak usage of name\",\n            showarrow=False,\n            yshift=10)\nchart.add_annotation(x=2002, y=54,\n            text=\"Name usage shows downward trend\",\n            showarrow=False,\n            yshift=10)\nchart.show()\n\n\n                                                \n\n:::",
     "crumbs": [
       "DS250 Projects",
-      "Project 2"
+      "Project 1"
     ]
   },
   {
-    "objectID": "Projects/project2.html#questiontask-2",
-    "href": "Projects/project2.html#questiontask-2",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "QUESTION|TASK 2",
-    "text": "QUESTION|TASK 2\nCOPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n::: {#cell-Q2 chart .cell execution_count=7}\n\nplot example\n# Include and execute your code here\nchart = px.bar(df.head(200),\n    x=\"name\", \n    y=\"AK\"\n)\nchart.show()\n\n\n                                                \nMy useless chart\n\n:::\n::: {#cell-Q2 table .cell .tbl-cap-location-top tbl-cap=‘Not much of a table’ execution_count=8}\n\ntable example\n# Include and execute your code here\nmydat = df.head(1000)\\\n    .groupby('year')\\\n    .sum()\\\n    .reset_index()\\\n    .tail(10)\\\n    .filter([\"year\", \"AK\",\"AR\"])\n\ndisplay(mydat)\n\n\n\n\n\n\n\n\n\nyear\nAK\nAR\n\n\n\n\n96\n2006\n21.0\n183.0\n\n\n97\n2007\n28.0\n153.0\n\n\n98\n2008\n36.0\n212.0\n\n\n99\n2009\n34.0\n179.0\n\n\n100\n2010\n22.0\n196.0\n\n\n101\n2011\n41.0\n148.0\n\n\n102\n2012\n28.0\n140.0\n\n\n103\n2013\n26.0\n134.0\n\n\n104\n2014\n20.0\n114.0\n\n\n105\n2015\n28.0\n121.0\n\n\n\n\n\n\n:::",
+    "objectID": "Projects/project1.html#brittany",
+    "href": "Projects/project1.html#brittany",
+    "title": "Client Report - [Project 1]",
+    "section": "Brittany",
+    "text": "Brittany\nIf you talked to someone named Brittany on the phone, what is your guess of his or her age? What ages would you not guess?\nIf I were to go off of a random guess, I would say they would probably be in their 30s right now. Based off of the chart of name usage per year, my guess is accurate because it is more likely someone named Brittany will be in their 30s. I would probably not guess anyone in their 20s or lower or anyone in their 40s or higher\n\n\nRead and format data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\").query(\"name == 'Brittany'\")\n\n\n::: {#cell-Q2 chart .cell execution_count=6}\n\nplot example\nchart = px.bar(df.head(200),\n    x=\"year\", \n    y=\"Total\",\n    color=\"name\",\n    title=\"Total Number of Babies per Year Named 'Brittany'\"\n)\nchart.add_annotation(x=1986, y=17856.5,\n    text=\"Start of Brittany in their 30s / My guess\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1976, y=304,\n    text=\"Brittany in 20s. Would not guess this or lower\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1996, y=13796,\n    text=\"Brittany in 40s. Would not guess this or higher\",\n    showarrow=True,\n    arrowhead=1)\nchart.show()\n\n\n                                                \n\n:::",
     "crumbs": [
       "DS250 Projects",
-      "Project 2"
+      "Project 1"
     ]
   },
   {
-    "objectID": "Projects/project2.html#questiontask-3",
-    "href": "Projects/project2.html#questiontask-3",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "QUESTION|TASK 3",
-    "text": "QUESTION|TASK 3\nCOPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n::: {#cell-Q3 chart .cell execution_count=10}\n\nplot example\n# Include and execute your code here\nchart = px.bar(df.head(200),\n    x=\"name\", \n    y=\"AK\"\n)\nchart.show()\n\n\n                                                \nMy useless chart\n\n:::\n::: {#cell-Q3 table .cell .tbl-cap-location-top tbl-cap=‘Not much of a table’ execution_count=11}\n\ntable example\n# Include and execute your code here\nmydat = df.head(1000)\\\n    .groupby('year')\\\n    .sum()\\\n    .reset_index()\\\n    .tail(10)\\\n    .filter([\"year\", \"AK\",\"AR\"])\n\ndisplay(mydat)\n\n\n\n\n\n\n\n\n\nyear\nAK\nAR\n\n\n\n\n96\n2006\n21.0\n183.0\n\n\n97\n2007\n28.0\n153.0\n\n\n98\n2008\n36.0\n212.0\n\n\n99\n2009\n34.0\n179.0\n\n\n100\n2010\n22.0\n196.0\n\n\n101\n2011\n41.0\n148.0\n\n\n102\n2012\n28.0\n140.0\n\n\n103\n2013\n26.0\n134.0\n\n\n104\n2014\n20.0\n114.0\n\n\n105\n2015\n28.0\n121.0\n\n\n\n\n\n\n:::",
+    "objectID": "Projects/project1.html#christian-names",
+    "href": "Projects/project1.html#christian-names",
+    "title": "Client Report - [Project 1]",
+    "section": "Christian Names",
+    "text": "Christian Names\nMary, Martha, Peter, and Paul are all Christian names. From 1920 - 2000, compare the name usage of each of the four names. What trends do you notice?\nThe biggest thing I noticed right off the bat is that the name ‘Mary’ has by far the highest usage from 1920 all the way until 1968 where we see ‘Paul’ overtake. ‘Mary’ then makes a ressurgance in between 1988 and 1989 and becomes, once again, the most used name on through 2000. ‘Paul’, throughout the years is always higher in usage than both ‘Martha’ and ‘Peter’ and only being supassed by ‘Mary’ for the majority of the time. ‘Martha’ stays above ‘Peter’ and below ‘Paul’ from 1920 till 1953 where it dips below ‘Peter’ securing it’s spot as the least used name of the bunch overall. ‘Peter’ starts off as the lowest used name from 1920 until 1953 where it surpasses ‘Martha’. From then on it remains above ‘Martha’ and becomes the second lowest used name overall. Something interesting to note is that in all of the names, I noticed the beginning of an upward trend in all of them around 1936 with ‘Peter’ and ‘Paul’ being the only ones that started the upward trend a few years earlier. We also see a drastic fall for ‘Mary’, ‘Paul’, and ‘Peter’ between the years of 1950 and 1976. ‘Martha’, for whatever reason, started this trend earlier in 1952.\n\n\nRead and format data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\").query(\"name in ['Peter','Paul','Mary','Martha'] & year &gt;= 1920 & year &lt;=2000\")\n\n\n::: {#cell-Q3 chart .cell execution_count=8}\n\nplot example\nchart = px.line(df.head(1000),\n    x=\"year\", \n    y=\"Total\",\n    color=\"name\",\n    title=\"Historical Usage of 'Mary', 'Martha', 'Peter', and 'Paul'\"\n)\nchart.add_annotation(x=1950, y=53791,\n    text=\"Peak of Usage: Mary\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1954, y=25662.5,\n    text=\"Peak of Usage: Paul\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1947, y=10651,\n    text=\"Peak of Usage: Martha\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1956, y=11321,\n    text=\"Peak of Usage: Peter\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2000, y=6184,\n    text=\"Lowest Usage: Mary\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2000, y=3786,\n    text=\"Lowest Usage: Paul\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1932, y=2694.5,\n    text=\"Lowest Usage: Peter\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1999, y=693,\n    text=\"Lowest Usage: Martha\",\n    showarrow=True,\n    arrowhead=1)\nchart.show()\n\n\n                                                \n\n:::",
     "crumbs": [
       "DS250 Projects",
-      "Project 2"
+      "Project 1"
+    ]
+  },
+  {
+    "objectID": "Projects/project1.html#movie-names",
+    "href": "Projects/project1.html#movie-names",
+    "title": "Client Report - [Project 1]",
+    "section": "Movie Names",
+    "text": "Movie Names\nThink of a unique name from a famous movie. Plot the usage of that name and see how changes line up with the movie release. Does it look like the movie had an effect on usage?\n_I decided to plot the usages of four names: Flynn, Tony, Elsa, and Jack. These are the names of the main characters in Tangled, Pirates of the Caribbean, Frozen, and Iron-Man respectively. I plotted them so I could see if there was any correltion between usage, and the years those movies were released. From what I could see from the data, There was a sharp rise in usage of the name Jack a year after the Pirates movie came out. This one is tough because it seems like there wasn’t a sharp increase in usage until about a year after it came out. I could attribute the usage spike to the movie’s release but I’m not 100% sure. With Elsa, and Flynn, We see a sharp spike in usage after their movies were released suggesting that the movies did cause that spike. As for Tony, we actually see a downward trend start a few years before the Iron-Man movie released. It is hard to determine wether the movie had a significant impact on that name’s usage.\n\n\nRead and format data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\").query(\"name in ['Flynn','Jack','Elsa','Tony']\")\n\n\n::: {#cell-Q4 chart .cell execution_count=10}\n\nplot example\nchart = px.line(df.head(1000),\n    x=\"year\", \n    y=\"Total\",\n    color=\"name\",\n    title=\"Historical Usage of 'Flynn', 'Jack', 'Elsa', and 'Tony'\"\n)\n\nchart.add_annotation(x=2003, y=9316,\n    text=\"Pirates of the Caribbean released\", #|We see a 232 usage increase from 2003 to 2004 after pirates 1. We see a much bigger differance in from 2004 to 2005.\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2010, y=24,\n    text=\"Tangled released\", #| See a differance of 129 for the next year\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2013, y=525,\n    text=\"Frozen released\", #| Differance of 580 next year\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2008, y=853,\n    text=\"Iron-Man released\", #| Down 77 next year\n    showarrow=True,\n    arrowhead=1)\n\nchart.show()\n\n\n                                                \n\n:::",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 1"
     ]
   },
   {
@@ -272,124 +283,113 @@
     "text": "MarkDown Basics"
   },
   {
-    "objectID": "Projects/project1.html",
-    "href": "Projects/project1.html",
-    "title": "Client Report - [Project 1]",
+    "objectID": "Projects/ds250_project_3.html",
+    "href": "Projects/ds250_project_3.html",
+    "title": "Client Report - [Project 3]",
     "section": "",
-    "text": "For my research I decided to look at a data set with names and pose a few questions to the data. I first looked at my name and how it was used both in my birth year and in the rest of it’s usage history to see if my name was used more or less before and after that year. I then decided to look at the name “Brittany”‘s’ usage to determine what age I would guess a person this year would most likely be if they had that name. Next, I studied the trends in name usage for Mary, Martha, Peter, and Paul to see what trends those names followed from 1920 - 2000. Finally I compared main character names and their usages in history to the release date of the movie to see if there was any correlation between the two.\n\n\nRead and format project data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Projects/project1.html#elevator-pitch",
-    "href": "Projects/project1.html#elevator-pitch",
-    "title": "Client Report - [Project 1]",
-    "section": "",
-    "text": "For my research I decided to look at a data set with names and pose a few questions to the data. I first looked at my name and how it was used both in my birth year and in the rest of it’s usage history to see if my name was used more or less before and after that year. I then decided to look at the name “Brittany”‘s’ usage to determine what age I would guess a person this year would most likely be if they had that name. Next, I studied the trends in name usage for Mary, Martha, Peter, and Paul to see what trends those names followed from 1920 - 2000. Finally I compared main character names and their usages in history to the release date of the movie to see if there was any correlation between the two.\n\n\nRead and format project data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Projects/project1.html#my-name",
-    "href": "Projects/project1.html#my-name",
-    "title": "Client Report - [Project 1]",
-    "section": "My Name",
-    "text": "My Name\nHow does your name at your birth year compare to its use historically?\nBefore my birth year, we see that the common usage of my name starts in 1976 and from that time till 1985 the total number of babies born with that name stays roughly between 5 and 8 per year with one exception in 1977 with 0 reported. From there we see a sharp upward trend which ends in a peak usage of 72 total in 1995. from there we see it dip down to 39 in 1998 and 1999. After my birth year, the name usage shows a downward trend with a spike of usage every few years.\n\n\nRead and format data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\").query(\"name == 'Mckay'\")\n\n\n::: {#cell-Q1 chart .cell execution_count=4}\n\nplot example\nchart = px.bar(df.head(200),\n    x=\"year\", \n    y=\"Total\",\n    color=\"name\",\n    title=\"Total Number of Babies per Year Named 'Mckay'\"\n)\nchart.add_annotation(x=1999, y=39,\n            text=\"My birth year\",\n            showarrow=True,\n            arrowhead=1)\nchart.add_annotation(x=1976, y=8,\n            text=\"Name starts to be used more frequently\",\n            showarrow=False,\n            yshift=10)\nchart.add_annotation(x=1986, y=15,\n            text=\"Name usage shows upward trend\",\n            showarrow=False,\n            yshift=10)\nchart.add_annotation(x=1995, y=72,\n            text=\"Peak usage of name\",\n            showarrow=False,\n            yshift=10)\nchart.add_annotation(x=2002, y=54,\n            text=\"Name usage shows downward trend\",\n            showarrow=False,\n            yshift=10)\nchart.show()\n\n\n                                                \n\n:::",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Projects/project1.html#brittany",
-    "href": "Projects/project1.html#brittany",
-    "title": "Client Report - [Project 1]",
-    "section": "Brittany",
-    "text": "Brittany\nIf you talked to someone named Brittany on the phone, what is your guess of his or her age? What ages would you not guess?\nIf I were to go off of a random guess, I would say they would probably be in their 30s right now. Based off of the chart of name usage per year, my guess is accurate because it is more likely someone named Brittany will be in their 30s. I would probably not guess anyone in their 20s or lower or anyone in their 40s or higher\n\n\nRead and format data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\").query(\"name == 'Brittany'\")\n\n\n::: {#cell-Q2 chart .cell execution_count=6}\n\nplot example\nchart = px.bar(df.head(200),\n    x=\"year\", \n    y=\"Total\",\n    color=\"name\",\n    title=\"Total Number of Babies per Year Named 'Brittany'\"\n)\nchart.add_annotation(x=1986, y=17856.5,\n    text=\"Start of Brittany in their 30s / My guess\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1976, y=304,\n    text=\"Brittany in 20s. Would not guess this or lower\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1996, y=13796,\n    text=\"Brittany in 40s. Would not guess this or higher\",\n    showarrow=True,\n    arrowhead=1)\nchart.show()\n\n\n                                                \n\n:::",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Projects/project1.html#christian-names",
-    "href": "Projects/project1.html#christian-names",
-    "title": "Client Report - [Project 1]",
-    "section": "Christian Names",
-    "text": "Christian Names\nMary, Martha, Peter, and Paul are all Christian names. From 1920 - 2000, compare the name usage of each of the four names. What trends do you notice?\nThe biggest thing I noticed right off the bat is that the name ‘Mary’ has by far the highest usage from 1920 all the way until 1968 where we see ‘Paul’ overtake. ‘Mary’ then makes a ressurgance in between 1988 and 1989 and becomes, once again, the most used name on through 2000. ‘Paul’, throughout the years is always higher in usage than both ‘Martha’ and ‘Peter’ and only being supassed by ‘Mary’ for the majority of the time. ‘Martha’ stays above ‘Peter’ and below ‘Paul’ from 1920 till 1953 where it dips below ‘Peter’ securing it’s spot as the least used name of the bunch overall. ‘Peter’ starts off as the lowest used name from 1920 until 1953 where it surpasses ‘Martha’. From then on it remains above ‘Martha’ and becomes the second lowest used name overall. Something interesting to note is that in all of the names, I noticed the beginning of an upward trend in all of them around 1936 with ‘Peter’ and ‘Paul’ being the only ones that started the upward trend a few years earlier. We also see a drastic fall for ‘Mary’, ‘Paul’, and ‘Peter’ between the years of 1950 and 1976. ‘Martha’, for whatever reason, started this trend earlier in 1952.\n\n\nRead and format data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\").query(\"name in ['Peter','Paul','Mary','Martha'] & year &gt;= 1920 & year &lt;=2000\")\n\n\n::: {#cell-Q3 chart .cell execution_count=8}\n\nplot example\nchart = px.line(df.head(1000),\n    x=\"year\", \n    y=\"Total\",\n    color=\"name\",\n    title=\"Historical Usage of 'Mary', 'Martha', 'Peter', and 'Paul'\"\n)\nchart.add_annotation(x=1950, y=53791,\n    text=\"Peak of Usage: Mary\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1954, y=25662.5,\n    text=\"Peak of Usage: Paul\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1947, y=10651,\n    text=\"Peak of Usage: Martha\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1956, y=11321,\n    text=\"Peak of Usage: Peter\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2000, y=6184,\n    text=\"Lowest Usage: Mary\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2000, y=3786,\n    text=\"Lowest Usage: Paul\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1932, y=2694.5,\n    text=\"Lowest Usage: Peter\",\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=1999, y=693,\n    text=\"Lowest Usage: Martha\",\n    showarrow=True,\n    arrowhead=1)\nchart.show()\n\n\n                                                \n\n:::",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Projects/project1.html#movie-names",
-    "href": "Projects/project1.html#movie-names",
-    "title": "Client Report - [Project 1]",
-    "section": "Movie Names",
-    "text": "Movie Names\nThink of a unique name from a famous movie. Plot the usage of that name and see how changes line up with the movie release. Does it look like the movie had an effect on usage?\n_I decided to plot the usages of four names: Flynn, Tony, Elsa, and Jack. These are the names of the main characters in Tangled, Pirates of the Caribbean, Frozen, and Iron-Man respectively. I plotted them so I could see if there was any correltion between usage, and the years those movies were released. From what I could see from the data, There was a sharp rise in usage of the name Jack a year after the Pirates movie came out. This one is tough because it seems like there wasn’t a sharp increase in usage until about a year after it came out. I could attribute the usage spike to the movie’s release but I’m not 100% sure. With Elsa, and Flynn, We see a sharp spike in usage after their movies were released suggesting that the movies did cause that spike. As for Tony, we actually see a downward trend start a few years before the Iron-Man movie released. It is hard to determine wether the movie had a significant impact on that name’s usage.\n\n\nRead and format data\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\").query(\"name in ['Flynn','Jack','Elsa','Tony']\")\n\n\n::: {#cell-Q4 chart .cell execution_count=10}\n\nplot example\nchart = px.line(df.head(1000),\n    x=\"year\", \n    y=\"Total\",\n    color=\"name\",\n    title=\"Historical Usage of 'Flynn', 'Jack', 'Elsa', and 'Tony'\"\n)\n\nchart.add_annotation(x=2003, y=9316,\n    text=\"Pirates of the Caribbean released\", #|We see a 232 usage increase from 2003 to 2004 after pirates 1. We see a much bigger differance in from 2004 to 2005.\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2010, y=24,\n    text=\"Tangled released\", #| See a differance of 129 for the next year\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2013, y=525,\n    text=\"Frozen released\", #| Differance of 580 next year\n    showarrow=True,\n    arrowhead=1)\n\nchart.add_annotation(x=2008, y=853,\n    text=\"Iron-Man released\", #| Down 77 next year\n    showarrow=True,\n    arrowhead=1)\n\nchart.show()\n\n\n                                                \n\n:::",
-    "crumbs": [
-      "DS250 Projects",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Projects/project3.html",
-    "href": "Projects/project3.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
+    "text": "In my analysis of the ‘Lahmans baseball Database’ I was able to aquire important data relating to certain player stats, team stats, and a comparison between two seperat teams. I was able to gather specific players who attended BYUI and displayed their salaries. I then found players who’s batting averages met certain criteria. Finally I was able to compare the number of wins per year for two teams and conclude some interesting theories from the data\n\n\nRead and format project data\n# Include and execute your code here\nsqlite_file = 'lahmansbaseballdb.sqlite'",
     "crumbs": [
       "DS250 Projects",
       "Project 3"
     ]
   },
   {
-    "objectID": "Projects/project3.html#elevator-pitch",
-    "href": "Projects/project3.html#elevator-pitch",
-    "title": "Client Report - [Insert Project Title]",
+    "objectID": "Projects/ds250_project_3.html#elevator-pitch",
+    "href": "Projects/ds250_project_3.html#elevator-pitch",
+    "title": "Client Report - [Project 3]",
     "section": "",
-    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
+    "text": "In my analysis of the ‘Lahmans baseball Database’ I was able to aquire important data relating to certain player stats, team stats, and a comparison between two seperat teams. I was able to gather specific players who attended BYUI and displayed their salaries. I then found players who’s batting averages met certain criteria. Finally I was able to compare the number of wins per year for two teams and conclude some interesting theories from the data\n\n\nRead and format project data\n# Include and execute your code here\nsqlite_file = 'lahmansbaseballdb.sqlite'",
     "crumbs": [
       "DS250 Projects",
       "Project 3"
     ]
   },
   {
-    "objectID": "Projects/project3.html#questiontask-1",
-    "href": "Projects/project3.html#questiontask-1",
+    "objectID": "Projects/ds250_project_3.html#byui-baseball-players",
+    "href": "Projects/ds250_project_3.html#byui-baseball-players",
+    "title": "Client Report - [Project 3]",
+    "section": "BYUI Baseball Players",
+    "text": "BYUI Baseball Players\nWrite an SQL query to create a new dataframe about baseball players who attended BYU-Idaho. The new table should contain five columns: playerID, schoolID, salary, and the yearID/teamID associated with each salary. Order the table by salary (highest to lowest) and print out the table in your report.\nTo aquire all the pertinent information, I ran a query that grabbed the relevant data from both the ‘collegeplaying’ and ‘salaries’ table in the database. Then, I had them reference eachother with common values so the data displayed from one table would be correctly matched up to the data of the other table. Finally, I filtered them to only show players that were from BYUI using ‘schoolID’ and alphebatized the results with salary sorted from highest to lowest.\n\n\nRead and format data\n# Include and execute your code here\ncon = sqlite3.connect(sqlite_file)\nq = 'SELECT collegeplaying.playerID, collegeplaying.schoolID, collegeplaying.yearID, salaries.teamID, salaries.salary FROM collegeplaying, salaries WHERE collegeplaying.playerID = salaries.playerID AND schoolID = \"idbyuid\" ORDER BY salary DESC'\nresults = pd.read_sql_query(q,con)\n\nresults\n\n\n\n\n\n\n\n\n\nplayerID\nschoolID\nyearID\nteamID\nsalary\n\n\n\n\n0\nlindsma01\nidbyuid\n2001\nCHA\n4000000.0\n\n\n1\nlindsma01\nidbyuid\n2002\nCHA\n4000000.0\n\n\n2\nlindsma01\nidbyuid\n2001\nBAL\n3600000.0\n\n\n3\nlindsma01\nidbyuid\n2002\nBAL\n3600000.0\n\n\n4\nlindsma01\nidbyuid\n2001\nCOL\n2800000.0\n\n\n5\nlindsma01\nidbyuid\n2002\nCOL\n2800000.0\n\n\n6\nlindsma01\nidbyuid\n2001\nCHA\n2300000.0\n\n\n7\nlindsma01\nidbyuid\n2002\nCHA\n2300000.0\n\n\n8\nlindsma01\nidbyuid\n2001\nHOU\n1625000.0\n\n\n9\nlindsma01\nidbyuid\n2002\nHOU\n1625000.0\n\n\n10\nstephga01\nidbyuid\n1991\nSLN\n1025000.0\n\n\n11\nstephga01\nidbyuid\n1992\nSLN\n1025000.0\n\n\n12\nstephga01\nidbyuid\n1991\nSLN\n900000.0\n\n\n13\nstephga01\nidbyuid\n1992\nSLN\n900000.0\n\n\n14\nstephga01\nidbyuid\n1991\nSLN\n800000.0\n\n\n15\nstephga01\nidbyuid\n1992\nSLN\n800000.0\n\n\n16\nstephga01\nidbyuid\n1991\nSLN\n550000.0\n\n\n17\nstephga01\nidbyuid\n1992\nSLN\n550000.0\n\n\n18\nlindsma01\nidbyuid\n2001\nFLO\n410000.0\n\n\n19\nlindsma01\nidbyuid\n2002\nFLO\n410000.0\n\n\n20\nlindsma01\nidbyuid\n2001\nFLO\n395000.0\n\n\n21\nlindsma01\nidbyuid\n2002\nFLO\n395000.0\n\n\n22\nlindsma01\nidbyuid\n2001\nFLO\n380000.0\n\n\n23\nlindsma01\nidbyuid\n2002\nFLO\n380000.0\n\n\n24\nstephga01\nidbyuid\n1991\nSLN\n215000.0\n\n\n25\nstephga01\nidbyuid\n1992\nSLN\n215000.0\n\n\n26\nstephga01\nidbyuid\n1991\nPHI\n185000.0\n\n\n27\nstephga01\nidbyuid\n1992\nPHI\n185000.0\n\n\n28\nstephga01\nidbyuid\n1991\nPHI\n150000.0\n\n\n29\nstephga01\nidbyuid\n1992\nPHI\n150000.0",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 3"
+    ]
+  },
+  {
+    "objectID": "Projects/ds250_project_3.html#batting-averages",
+    "href": "Projects/ds250_project_3.html#batting-averages",
+    "title": "Client Report - [Project 3]",
+    "section": "Batting Averages",
+    "text": "Batting Averages\nThis three-part question requires you to calculate batting average (number of hits divided by the number of at-bats) a. Write an SQL query that provides playerID, yearID, and batting average for players with at least 1 at bat that year. Sort the table from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report. b. Use the same query as above, but only include players with at least 10 at bats that year. Print the top 5 results. c. Now calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats, and print the top 5 results.\nFor this part, I calculated the batting averages per year for students who met three instances of certain criteria. In the first instance I returned the batting averages of players who had at least one ‘at bat’ the years they played. In the second instance, I returned the averages of players with at least 10 ‘at bats’. Finally, I calculated the students ‘total_battingAverage’ over their entire careers and returned those results. All results were returned in alphabetical order by playerID and sorted from highest to lowest batting average.\n::: {#cell-Q2 A .cell execution_count=4}\n\nShow the code\ncon = sqlite3.connect(sqlite_file)\nq = 'SELECT playerID, yearID, (CAST(H AS FLOAT)/CAST(AB AS FLOAT)) AS battingAverage FROM batting WHERE AB &gt;=1 ORDER BY battingAverage DESC, playerID LIMIT 5'\nresults = pd.read_sql_query(q,con)\n\nresults\n\n\n\n\n\n\n\n\n\nplayerID\nyearID\nbattingAverage\n\n\n\n\n0\naberal01\n1957\n1.0\n\n\n1\nabernte02\n1960\n1.0\n\n\n2\nabramge01\n1923\n1.0\n\n\n3\nacklefr01\n1964\n1.0\n\n\n4\nalanirj01\n2019\n1.0\n\n\n\n\n\n\n:::\n::: {#cell-Q2 B .cell execution_count=5}\n\nShow the code\ncon = sqlite3.connect(sqlite_file)\nq = 'SELECT playerID, yearID, (CAST(H AS FLOAT)/CAST(AB AS FLOAT)) AS battingAverage FROM batting WHERE AB &gt;=10 ORDER BY playerID ASC, battingAverage DESC LIMIT 5'\nresults = pd.read_sql_query(q,con)\n\nresults\n\n\n\n\n\n\n\n\n\nplayerID\nyearID\nbattingAverage\n\n\n\n\n0\naaronha01\n1959\n0.354531\n\n\n1\naaronha01\n1956\n0.328407\n\n\n2\naaronha01\n1964\n0.328070\n\n\n3\naaronha01\n1971\n0.327273\n\n\n4\naaronha01\n1961\n0.326700\n\n\n\n\n\n\n:::\n::: {#cell-Q2 C .cell execution_count=6}\n\nShow the code\ncon = sqlite3.connect(sqlite_file)\nq = 'SELECT playerID, yearID, (CAST(SUM(H) AS FLOAT)/CAST(SUM(AB) AS FLOAT)) AS total_battingAverage FROM batting WHERE AB &gt;=100 GROUP BY playerID, yearID ORDER BY playerID ASC, total_battingAverage DESC LIMIT 5'\nresults = pd.read_sql_query(q,con)\n\nresults\n\n\n\n\n\n\n\n\n\nplayerID\nyearID\ntotal_battingAverage\n\n\n\n\n0\naaronha01\n1959\n0.354531\n\n\n1\naaronha01\n1956\n0.328407\n\n\n2\naaronha01\n1964\n0.328070\n\n\n3\naaronha01\n1971\n0.327273\n\n\n4\naaronha01\n1961\n0.326700\n\n\n\n\n\n\n:::",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 3"
+    ]
+  },
+  {
+    "objectID": "Projects/ds250_project_3.html#new-york-mutuals-v.s.-boston-red-stockings",
+    "href": "Projects/ds250_project_3.html#new-york-mutuals-v.s.-boston-red-stockings",
+    "title": "Client Report - [Project 3]",
+    "section": "New York Mutuals V.S. Boston Red Stockings",
+    "text": "New York Mutuals V.S. Boston Red Stockings\nPick any two baseball teams and compare them using a metric of your choice (average salary, home runs, number of wins, etc). Write an SQL query to get the data you need, then make a graph using Plotly Express to visualize the comparison. What do you learn?\nI plotted two seperate teams on a line graph showing the amount of ‘wins’ they had per year and compared them over the years. I wrote an sql query to obtain needed information like ‘team’, ‘wins’ and ‘years’ and then filtered them by the ‘New York Mutuals’ team and the ‘Boston Red Stockings’ team. I then grouped the data set by ‘name’ and ‘yearID’ to ensure that the query was ran for each instance of a unique pairing in the dataset. Lastly, I ordered the table by ‘name’ and ‘yearID’ to keep the generated table tidy. Once I had the completed query, I then imported that data into a line graph. From my observations, I noticed that both teams do fairly well with increasing their number of wins as years go on with them both generally showing an upward trend from 1871 to 1874. Interestingly enough, in the year 1874, we see the Boston Redstockings drastically increase in their wins into 1875 while the New York Mutuals, at the same time, decrease drastically in thier wins into 1875 and 1876. I dont suspect that ther may be alot of causation at play but I do think there is a correlation between the Boston Red Stocking increase and the New York Mutual decrease. It is possible that because the Boston Red Stockings may have set a new standard for number of wins possible in a year, other teams may have increased their wins against other teams and specifically with the New York Mutuals to compete with the Boston team.\n\n\nShow the code\ncon = sqlite3.connect(sqlite_file)\nq = 'SELECT name, yearID, SUM(W) AS totalWins FROM teams WHERE name IN (\"New York Mutuals\", \"Boston Red Stockings\") GROUP BY name, yearID ORDER BY name, yearID'\n\nresults = pd.read_sql_query(q,con)\n\nline = px.line(results, x=\"yearID\", y=\"totalWins\", color=\"name\", title='Number of Wins per Team, per Year')\n\nline.show()",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 3"
+    ]
+  },
+  {
+    "objectID": "Projects/project2.html",
+    "href": "Projects/project2.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 2"
+    ]
+  },
+  {
+    "objectID": "Projects/project2.html#elevator-pitch",
+    "href": "Projects/project2.html#elevator-pitch",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Include and execute your code here\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 2"
+    ]
+  },
+  {
+    "objectID": "Projects/project2.html#questiontask-1",
+    "href": "Projects/project2.html#questiontask-1",
     "title": "Client Report - [Insert Project Title]",
     "section": "QUESTION|TASK 1",
     "text": "QUESTION|TASK 1\nCOPY PASTE QUESTION|TASK 1 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n::: {#cell-Q1 chart .cell execution_count=4}\n\nplot example\n# Include and execute your code here\nchart = px.bar(df.head(200),\n    x=\"name\", \n    y=\"AK\"\n)\nchart.show()\n\n\n                                                \nMy useless chart\n\n:::\n::: {#cell-Q1 table .cell .tbl-cap-location-top tbl-cap=‘Not much of a table’ execution_count=5}\n\ntable example\n# Include and execute your code here\nmydat = df.head(1000)\\\n    .groupby('year')\\\n    .sum()\\\n    .reset_index()\\\n    .tail(10)\\\n    .filter([\"year\", \"AK\",\"AR\"])\n\ndisplay(mydat)\n\n\n\n\n\n\n\n\n\nyear\nAK\nAR\n\n\n\n\n96\n2006\n21.0\n183.0\n\n\n97\n2007\n28.0\n153.0\n\n\n98\n2008\n36.0\n212.0\n\n\n99\n2009\n34.0\n179.0\n\n\n100\n2010\n22.0\n196.0\n\n\n101\n2011\n41.0\n148.0\n\n\n102\n2012\n28.0\n140.0\n\n\n103\n2013\n26.0\n134.0\n\n\n104\n2014\n20.0\n114.0\n\n\n105\n2015\n28.0\n121.0\n\n\n\n\n\n\n:::",
     "crumbs": [
       "DS250 Projects",
-      "Project 3"
+      "Project 2"
     ]
   },
   {
-    "objectID": "Projects/project3.html#questiontask-2",
-    "href": "Projects/project3.html#questiontask-2",
+    "objectID": "Projects/project2.html#questiontask-2",
+    "href": "Projects/project2.html#questiontask-2",
     "title": "Client Report - [Insert Project Title]",
     "section": "QUESTION|TASK 2",
     "text": "QUESTION|TASK 2\nCOPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n::: {#cell-Q2 chart .cell execution_count=7}\n\nplot example\n# Include and execute your code here\nchart = px.bar(df.head(200),\n    x=\"name\", \n    y=\"AK\"\n)\nchart.show()\n\n\n                                                \nMy useless chart\n\n:::\n::: {#cell-Q2 table .cell .tbl-cap-location-top tbl-cap=‘Not much of a table’ execution_count=8}\n\ntable example\n# Include and execute your code here\nmydat = df.head(1000)\\\n    .groupby('year')\\\n    .sum()\\\n    .reset_index()\\\n    .tail(10)\\\n    .filter([\"year\", \"AK\",\"AR\"])\n\ndisplay(mydat)\n\n\n\n\n\n\n\n\n\nyear\nAK\nAR\n\n\n\n\n96\n2006\n21.0\n183.0\n\n\n97\n2007\n28.0\n153.0\n\n\n98\n2008\n36.0\n212.0\n\n\n99\n2009\n34.0\n179.0\n\n\n100\n2010\n22.0\n196.0\n\n\n101\n2011\n41.0\n148.0\n\n\n102\n2012\n28.0\n140.0\n\n\n103\n2013\n26.0\n134.0\n\n\n104\n2014\n20.0\n114.0\n\n\n105\n2015\n28.0\n121.0\n\n\n\n\n\n\n:::",
     "crumbs": [
       "DS250 Projects",
-      "Project 3"
+      "Project 2"
     ]
   },
   {
-    "objectID": "Projects/project3.html#questiontask-3",
-    "href": "Projects/project3.html#questiontask-3",
+    "objectID": "Projects/project2.html#questiontask-3",
+    "href": "Projects/project2.html#questiontask-3",
     "title": "Client Report - [Insert Project Title]",
     "section": "QUESTION|TASK 3",
     "text": "QUESTION|TASK 3\nCOPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n::: {#cell-Q3 chart .cell execution_count=10}\n\nplot example\n# Include and execute your code here\nchart = px.bar(df.head(200),\n    x=\"name\", \n    y=\"AK\"\n)\nchart.show()\n\n\n                                                \nMy useless chart\n\n:::\n::: {#cell-Q3 table .cell .tbl-cap-location-top tbl-cap=‘Not much of a table’ execution_count=11}\n\ntable example\n# Include and execute your code here\nmydat = df.head(1000)\\\n    .groupby('year')\\\n    .sum()\\\n    .reset_index()\\\n    .tail(10)\\\n    .filter([\"year\", \"AK\",\"AR\"])\n\ndisplay(mydat)\n\n\n\n\n\n\n\n\n\nyear\nAK\nAR\n\n\n\n\n96\n2006\n21.0\n183.0\n\n\n97\n2007\n28.0\n153.0\n\n\n98\n2008\n36.0\n212.0\n\n\n99\n2009\n34.0\n179.0\n\n\n100\n2010\n22.0\n196.0\n\n\n101\n2011\n41.0\n148.0\n\n\n102\n2012\n28.0\n140.0\n\n\n103\n2013\n26.0\n134.0\n\n\n104\n2014\n20.0\n114.0\n\n\n105\n2015\n28.0\n121.0\n\n\n\n\n\n\n:::",
     "crumbs": [
       "DS250 Projects",
-      "Project 3"
+      "Project 2"
     ]
   },
   {
@@ -467,40 +467,5 @@
     "title": "McKay Clark’s Resume",
     "section": "",
     "text": "May 2018-September 2018 Car Wash Associate for Epic Shine, Meridian, ID\n\nWorked with a team to give top of the line customer service.\nPreformed janitorial services around the carwash.\nInstructed people in the proper way to use an automated car wash.\n\n2018-2020 Religious Missionary, Kansas\n\nStudied rigorously from religious texts daily.\nTaught lessons on religious topics as a team.\nAttended trainings to become better missionaries.\n\nApril 2020-September 2020 Warehouse Associate for Scentsy, Meridian, ID\n\nTasked with Moving, packing, shipping, and restocking merchandise.\nTaught to put merchandise together.\n\nApril 2021-November 2021 Security Guard for Amazon, Meridian, ID\n\nTrained to identify threats to the facility, de-escalate potentially harmful situations, and observe and report suspicious activities to the proper authorities.\nPatrolled the building every hour to regulate the environment and discourage mischief.\nTrained to respond in emergency situations as an escort and administer CPR as needed.\n\nApril 2023-June 2023 Gas Station Clerk for Good 2 Go, Rigby, ID\n\nCompleted purchases for merchandise and/or gas.\nKept gas station and work area clean and tidy.\nPreformed simple maintenance on machinery.\n\nJuly 2023-Present Day Tailored Clothing Specialist for Dillards, Idaho Falls, ID\n\nHelp customers find what they want and need through asking questions and giving suggestions.\nTeach customers about the benefits of using a Dillards credit card and gude them through the application process.\nMeasure customers so they are getting the right fit for them in a variety of shirts, slacks, and suits."
-  },
-  {
-    "objectID": "Projects/ds250_project_3.html",
-    "href": "Projects/ds250_project_3.html",
-    "title": "Client Report - [Project 3]",
-    "section": "",
-    "text": "In my analysis of the ‘Lahmans baseball Database’ I was able to aquire important data relating to certain player stats, team stats, and a comparison between two seperat teams. I was able to gather specific players who attended BYUI and displayed their salaries. I then found players who’s batting averages met certain criteria. Finally I was able to compare the number of wins per year for two teams and conclude some interesting theories from the data\n\n\nRead and format project data\n# Include and execute your code here\nsqlite_file = 'lahmansbaseballdb.sqlite'"
-  },
-  {
-    "objectID": "Projects/ds250_project_3.html#elevator-pitch",
-    "href": "Projects/ds250_project_3.html#elevator-pitch",
-    "title": "Client Report - [Project 3]",
-    "section": "",
-    "text": "In my analysis of the ‘Lahmans baseball Database’ I was able to aquire important data relating to certain player stats, team stats, and a comparison between two seperat teams. I was able to gather specific players who attended BYUI and displayed their salaries. I then found players who’s batting averages met certain criteria. Finally I was able to compare the number of wins per year for two teams and conclude some interesting theories from the data\n\n\nRead and format project data\n# Include and execute your code here\nsqlite_file = 'lahmansbaseballdb.sqlite'"
-  },
-  {
-    "objectID": "Projects/ds250_project_3.html#byui-baseball-players",
-    "href": "Projects/ds250_project_3.html#byui-baseball-players",
-    "title": "Client Report - [Project 3]",
-    "section": "BYUI Baseball Players",
-    "text": "BYUI Baseball Players\nWrite an SQL query to create a new dataframe about baseball players who attended BYU-Idaho. The new table should contain five columns: playerID, schoolID, salary, and the yearID/teamID associated with each salary. Order the table by salary (highest to lowest) and print out the table in your report.\nTo aquire all the pertinent information, I ran a query that grabbed the relevant data from both the ‘collegeplaying’ and ‘salaries’ table in the database. Then, I had them reference eachother with common values so the data displayed from one table would be correctly matched up to the data of the other table. Finally, I filtered them to only show players that were from BYUI using ‘schoolID’ and alphebatized the results with salary sorted from highest to lowest.\n\n\nRead and format data\n# Include and execute your code here\ncon = sqlite3.connect(sqlite_file)\nq = 'SELECT collegeplaying.playerID, collegeplaying.schoolID, collegeplaying.yearID, salaries.teamID, salaries.salary FROM collegeplaying, salaries WHERE collegeplaying.playerID = salaries.playerID AND schoolID = \"idbyuid\" ORDER BY salary DESC'\nresults = pd.read_sql_query(q,con)\n\nresults\n\n\n\n\n\n\n\n\n\nplayerID\nschoolID\nyearID\nteamID\nsalary\n\n\n\n\n0\nlindsma01\nidbyuid\n2001\nCHA\n4000000.0\n\n\n1\nlindsma01\nidbyuid\n2002\nCHA\n4000000.0\n\n\n2\nlindsma01\nidbyuid\n2001\nBAL\n3600000.0\n\n\n3\nlindsma01\nidbyuid\n2002\nBAL\n3600000.0\n\n\n4\nlindsma01\nidbyuid\n2001\nCOL\n2800000.0\n\n\n5\nlindsma01\nidbyuid\n2002\nCOL\n2800000.0\n\n\n6\nlindsma01\nidbyuid\n2001\nCHA\n2300000.0\n\n\n7\nlindsma01\nidbyuid\n2002\nCHA\n2300000.0\n\n\n8\nlindsma01\nidbyuid\n2001\nHOU\n1625000.0\n\n\n9\nlindsma01\nidbyuid\n2002\nHOU\n1625000.0\n\n\n10\nstephga01\nidbyuid\n1991\nSLN\n1025000.0\n\n\n11\nstephga01\nidbyuid\n1992\nSLN\n1025000.0\n\n\n12\nstephga01\nidbyuid\n1991\nSLN\n900000.0\n\n\n13\nstephga01\nidbyuid\n1992\nSLN\n900000.0\n\n\n14\nstephga01\nidbyuid\n1991\nSLN\n800000.0\n\n\n15\nstephga01\nidbyuid\n1992\nSLN\n800000.0\n\n\n16\nstephga01\nidbyuid\n1991\nSLN\n550000.0\n\n\n17\nstephga01\nidbyuid\n1992\nSLN\n550000.0\n\n\n18\nlindsma01\nidbyuid\n2001\nFLO\n410000.0\n\n\n19\nlindsma01\nidbyuid\n2002\nFLO\n410000.0\n\n\n20\nlindsma01\nidbyuid\n2001\nFLO\n395000.0\n\n\n21\nlindsma01\nidbyuid\n2002\nFLO\n395000.0\n\n\n22\nlindsma01\nidbyuid\n2001\nFLO\n380000.0\n\n\n23\nlindsma01\nidbyuid\n2002\nFLO\n380000.0\n\n\n24\nstephga01\nidbyuid\n1991\nSLN\n215000.0\n\n\n25\nstephga01\nidbyuid\n1992\nSLN\n215000.0\n\n\n26\nstephga01\nidbyuid\n1991\nPHI\n185000.0\n\n\n27\nstephga01\nidbyuid\n1992\nPHI\n185000.0\n\n\n28\nstephga01\nidbyuid\n1991\nPHI\n150000.0\n\n\n29\nstephga01\nidbyuid\n1992\nPHI\n150000.0"
-  },
-  {
-    "objectID": "Projects/ds250_project_3.html#batting-averages",
-    "href": "Projects/ds250_project_3.html#batting-averages",
-    "title": "Client Report - [Project 3]",
-    "section": "Batting Averages",
-    "text": "Batting Averages\nThis three-part question requires you to calculate batting average (number of hits divided by the number of at-bats) a. Write an SQL query that provides playerID, yearID, and batting average for players with at least 1 at bat that year. Sort the table from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report. b. Use the same query as above, but only include players with at least 10 at bats that year. Print the top 5 results. c. Now calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats, and print the top 5 results.\nFor this part, I calculated the batting averages per year for students who met three instances of certain criteria. In the first instance I returned the batting averages of players who had at least one ‘at bat’ the years they played. In the second instance, I returned the averages of players with at least 10 ‘at bats’. Finally, I calculated the students ‘total_battingAverage’ over their entire careers and returned those results. All results were returned in alphabetical order by playerID and sorted from highest to lowest batting average.\n::: {#cell-Q2 A .cell execution_count=4}\n\nShow the code\ncon = sqlite3.connect(sqlite_file)\nq = 'SELECT playerID, yearID, (CAST(H AS FLOAT)/CAST(AB AS FLOAT)) AS battingAverage FROM batting WHERE AB &gt;=1 ORDER BY battingAverage DESC, playerID LIMIT 5'\nresults = pd.read_sql_query(q,con)\n\nresults\n\n\n\n\n\n\n\n\n\nplayerID\nyearID\nbattingAverage\n\n\n\n\n0\naberal01\n1957\n1.0\n\n\n1\nabernte02\n1960\n1.0\n\n\n2\nabramge01\n1923\n1.0\n\n\n3\nacklefr01\n1964\n1.0\n\n\n4\nalanirj01\n2019\n1.0\n\n\n\n\n\n\n:::\n::: {#cell-Q2 B .cell execution_count=5}\n\nShow the code\ncon = sqlite3.connect(sqlite_file)\nq = 'SELECT playerID, yearID, (CAST(H AS FLOAT)/CAST(AB AS FLOAT)) AS battingAverage FROM batting WHERE AB &gt;=10 ORDER BY playerID ASC, battingAverage DESC LIMIT 5'\nresults = pd.read_sql_query(q,con)\n\nresults\n\n\n\n\n\n\n\n\n\nplayerID\nyearID\nbattingAverage\n\n\n\n\n0\naaronha01\n1959\n0.354531\n\n\n1\naaronha01\n1956\n0.328407\n\n\n2\naaronha01\n1964\n0.328070\n\n\n3\naaronha01\n1971\n0.327273\n\n\n4\naaronha01\n1961\n0.326700\n\n\n\n\n\n\n:::\n::: {#cell-Q2 C .cell execution_count=6}\n\nShow the code\ncon = sqlite3.connect(sqlite_file)\nq = 'SELECT playerID, yearID, (CAST(SUM(H) AS FLOAT)/CAST(SUM(AB) AS FLOAT)) AS total_battingAverage FROM batting WHERE AB &gt;=100 GROUP BY playerID, yearID ORDER BY playerID ASC, total_battingAverage DESC LIMIT 5'\nresults = pd.read_sql_query(q,con)\n\nresults\n\n\n\n\n\n\n\n\n\nplayerID\nyearID\ntotal_battingAverage\n\n\n\n\n0\naaronha01\n1959\n0.354531\n\n\n1\naaronha01\n1956\n0.328407\n\n\n2\naaronha01\n1964\n0.328070\n\n\n3\naaronha01\n1971\n0.327273\n\n\n4\naaronha01\n1961\n0.326700\n\n\n\n\n\n\n:::"
-  },
-  {
-    "objectID": "Projects/ds250_project_3.html#new-york-mutuals-v.s.-boston-red-stockings",
-    "href": "Projects/ds250_project_3.html#new-york-mutuals-v.s.-boston-red-stockings",
-    "title": "Client Report - [Project 3]",
-    "section": "New York Mutuals V.S. Boston Red Stockings",
-    "text": "New York Mutuals V.S. Boston Red Stockings\nPick any two baseball teams and compare them using a metric of your choice (average salary, home runs, number of wins, etc). Write an SQL query to get the data you need, then make a graph using Plotly Express to visualize the comparison. What do you learn?\nI plotted two seperate teams on a line graph showing the amount of ‘wins’ they had per year and compared them over the years. I wrote an sql query to obtain needed information like ‘team’, ‘wins’ and ‘years’ and then filtered them by the ‘New York Mutuals’ team and the ‘Boston Red Stockings’ team. I then grouped the data set by ‘name’ and ‘yearID’ to ensure that the query was ran for each instance of a unique pairing in the dataset. Lastly, I ordered the table by ‘name’ and ‘yearID’ to keep the generated table tidy. Once I had the completed query, I then imported that data into a line graph. From my observations, I noticed that both teams do fairly well with increasing their number of wins as years go on with them both generally showing an upward trend from 1871 to 1874. Interestingly enough, in the year 1874, we see the Boston Redstockings drastically increase in their wins into 1875 while the New York Mutuals, at the same time, decrease drastically in thier wins into 1875 and 1876. I dont suspect that ther may be alot of causation at play but I do think there is a correlation between the Boston Red Stocking increase and the New York Mutual decrease. It is possible that because the Boston Red Stockings may have set a new standard for number of wins possible in a year, other teams may have increased their wins against other teams and specifically with the New York Mutuals to compete with the Boston team.\n\n\nShow the code\ncon = sqlite3.connect(sqlite_file)\nq = 'SELECT name, yearID, SUM(W) AS totalWins FROM teams WHERE name IN (\"New York Mutuals\", \"Boston Red Stockings\") GROUP BY name, yearID ORDER BY name, yearID'\n\nresults = pd.read_sql_query(q,con)\n\nline = px.line(results, x=\"yearID\", y=\"totalWins\", color=\"name\", title='Number of Wins per Team, per Year')\n\nline.show()"
   }
 ]
